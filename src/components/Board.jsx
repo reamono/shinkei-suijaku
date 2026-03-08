@@ -118,7 +118,10 @@ export default function Board({ pairs, cols, onComplete }) {
       <div className="board-container">
         <div
           className="board"
-          style={{ gridTemplateColumns: `repeat(${cols}, 1fr)` }}
+          style={{
+            gridTemplateColumns: `repeat(${cols}, 1fr)`,
+            gridTemplateRows: `repeat(${Math.ceil(cards.length / cols)}, 1fr)`,
+          }}
         >
           {cards.map((card) => (
             <Card
